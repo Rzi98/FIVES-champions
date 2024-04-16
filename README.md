@@ -97,3 +97,8 @@ Checkout our bot and team photos here **[Photos](./markdown/photo.md)**
 #### QA Testing: ####
 
     There are many edge cases in this competition. You need to test and debug your failure cases a lot. Don't simply test for the cases that work. Test for stuff such as when your robot gets cornered, etc...
+
+
+## Acknowledgements ##
+
+- We would like to credit MiroMyro repository for giving us the inspiration to write our program in a state machine manner. It is a very efficient way to write code and debug. Our file names may look similar but they have been heavily modified to suit our robot design and algorithms.
