@@ -70,13 +70,13 @@
 
 <h3>Base Algorithm (The one we used in competition)</h3>
 
-- ![image_2024-03-16_00-56-31]()
+- ![baseSearch](https://github.com/Rzi98/FIVES-champions/assets/84122776/7a7ca2c8-8282-4ea2-a4a6-28720db19bfa)
 
 <h3>Memoisation (Optimisation, we didn't have time to try)</h3>
 
 - Honestly this is too complicated for us to implement in the short time we had. It is also very difficult to pull off because there will be a lot of math and testing involved. I am not too sure if it will 100% work but it is does, your robot will always win the consecutive balls.
 
-- ![image_2024-03-16_00-56-42]()
+- ![cacheSearch](https://github.com/Rzi98/FIVES-champions/assets/84122776/c0d6c7ab-e5f3-4986-80cd-b0593cdd4baf)
 
 ## Designs ##
 Checkout our design by clicking the link: **[Design](./markdown/design.md)**
