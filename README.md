@@ -108,6 +108,7 @@ Download our match replays here: **[Replays](./markdown/compvid.md)**
 3. Jun Wei
 4. Yi Ren
 5. Chor Teng
+6. Nadia
 
 <h3><u>Software</u></h3>
 
