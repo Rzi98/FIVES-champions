@@ -84,7 +84,7 @@ Checkout our design by clicking the link: **[Design](./markdown/design.md)**
 Checkout our bot and team photos here **[Photos](./markdown/photo.md)**
 
 ## Competition Videos ##
-Checkout our match replays here **[Photos](./markdown/compvid.md)**
+Download our match replays here **[Photos](./markdown/compvid.md)**
 
 ## Tips ##
 
@@ -111,4 +111,4 @@ Checkout our match replays here **[Photos](./markdown/compvid.md)**
 
 - We would also like to credit <a href="https://github.com/SKEW002/MiroMyro">MiroMyro</a> repository for giving us the inspiration to write our program in a state machine manner. It is a very efficient way to write code and debug. Our file names may look similar but they have been heavily modified to suit our robot design and algorithms.
 
-- We would also like to give a shoutout to <a href="https://github.com/Pokealimit/MA4012-Competition">Pioneer Roller Team</a> repository for giving us the inspiration to use the rubber band roller design and the panaromic scan strategy. 
+- We would also like to give a shoutout to <a href="https://github.com/Pokealimit/MA4012-Competition">Roller Team</a> repository for giving us the inspiration to use the rubber band roller design and the panaromic scan strategy. 
