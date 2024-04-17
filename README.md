@@ -81,10 +81,10 @@
 Checkout our design by clicking the link: **[Design](./markdown/design.md)**
 
 ## Photos ##
-Checkout our bot and team photos here **[Photos](./markdown/photo.md)**
+Checkout our bot and team photos here: **[Photos](./markdown/photo.md)**
 
 ## Competition Videos ##
-Download our match replays here **[Replays](./markdown/compvid.md)**
+Download our match replays here: **[Replays](./markdown/compvid.md)**
 
 ## Tips ##
 
@@ -100,6 +100,25 @@ Download our match replays here **[Replays](./markdown/compvid.md)**
 
 - There are many edge cases in this competition. You need to test and debug your failure cases a lot. Don't simply test for the cases that work. Test for scenarios such as when your robot gets cornered, etc...
 
+## Contributors ##
+<h3><u>Hardware</u></h3>
+
+1. Minn Set
+2. Hakyung
+3. Jun Wei
+4. Yi Ren
+5. Chor Teng
+
+<h3><u>Software</u></h3>
+
+1. Raizee
+2. Arun
+3. XinZhi
+4. Rui Bin
+
+<h3><u>Robot Handler</u></h3>
+
+- Arun
 
 ## Acknowledgements ##
 
@@ -111,4 +130,4 @@ Download our match replays here **[Replays](./markdown/compvid.md)**
 
 - We would also like to credit <a href="https://github.com/SKEW002/MiroMyro">MiroMyro</a> repository for giving us the inspiration to write our program in a state machine manner. It is a very efficient way to write code and debug. Our file names may look similar but they have been heavily modified to suit our robot design and algorithms.
 
-- We would also like to give a shoutout to <a href="https://github.com/Pokealimit/MA4012-Competition">Roller Team</a> repository for giving us the inspiration to use the rubber band roller design and the panaromic scan strategy. 
+- We would also like to give a shoutout to <a href="https://github.com/Pokealimit/MA4012-Competition">Roller Team</a> repository for giving us the inspiration to use the rubber band roller design and the panaromic scan strategy.
