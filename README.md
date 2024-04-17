@@ -84,7 +84,7 @@ Checkout our design by clicking the link: **[Design](./markdown/design.md)**
 Checkout our bot and team photos here **[Photos](./markdown/photo.md)**
 
 ## Competition Videos ##
-Download our match replays here **[Photos](./markdown/compvid.md)**
+Download our match replays here **[Replays](./markdown/compvid.md)**
 
 ## Tips ##
 
