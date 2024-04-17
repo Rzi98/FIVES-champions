@@ -17,4 +17,8 @@
 
 <img src="https://github.com/Rzi98/FIVES-champions/assets/84122776/eedbd500-9cbe-44b5-8902-ab2b0647f4b2" width="500" height="500"/>
 
+<h4 style = "font-size: 20px;"> <b>RANKING</b> </h4>
+
+<img src="../.misc/ranking.jpg" width="500" height="500"/>
+
 </div>

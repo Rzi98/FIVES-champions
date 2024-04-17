@@ -1,4 +1,4 @@
-<h1 align='center'>MA4012 AY23/24 Semester 2 Champions 🏆</h1>
+<h1 align='center'>🏆 MA4012 AY23/24 Semester 2 Champions 🏆</h1>
 
 <br>
 
@@ -38,7 +38,7 @@
 
 <h3> 3. <u>Cover Large Ground of Areas</u> </h3>
 
-- Speed helps us to cover more ground but it is not enough. We need good search algorithms to ensure that the robot do not circle in a loop or waste to much time pan searching. We designed an algorithm such that the robot will never search for the same area/direction twice (unless triggered by interrupts -opp detection, etc...). This ensures that the robot will cover as much ground as possible in the 3 minutes. (Refer to our code)
+- Speed helps us to cover more ground but it is not enough. We need good search algorithms to ensure that the robot do not circle in a loop or waste to much time pan searching. We designed an algorithm such that the robot will never search for the same area/direction twice (unless triggered by interrupts opp detection, etc...). This ensures that the robot will cover as much ground as possible in the 3 minutes. (Refer to our code)
 
 <h3> 4. <u>Task Priority</u> </h3>
 
@@ -65,7 +65,6 @@
 | `sharpLimitSensor.c`  | Check limit switch code and sharp sensor boolean             | -             |
 
 
-
 ## Logic Flowchart ##
 
 <h3>Base Algorithm (The one we used in competition)</h3>
@@ -74,12 +73,15 @@
 
 <h3>Memoisation (Optimisation, we didn't have time to try)</h3>
 
-- Honestly this is too complicated for us to implement in the short time we had. It is also very difficult to pull off because there will be a lot of math and testing involved. I am not too sure if it will 100% work but it is does, your robot will always win the consecutive balls.
+- Honestly this is too complicated for us to implement in the short time we had. It is also very difficult to pull off because there will be a lot of math and testing involved. we are not too sure if it will 100% work but it is does, your robot will always win the consecutive balls.
 
 - ![cacheSearch](https://github.com/Rzi98/FIVES-champions/assets/84122776/c0d6c7ab-e5f3-4986-80cd-b0593cdd4baf)
 
 ## Designs ##
 Checkout our design by clicking the link: **[Design](./markdown/design.md)**
+
+## Photos ##
+Checkout our bot and team photos here **[Photos](./markdown/photo.md)**
 
 ## Photos ##
 Checkout our bot and team photos here **[Photos](./markdown/photo.md)**
@@ -90,15 +92,23 @@ Checkout our bot and team photos here **[Photos](./markdown/photo.md)**
 
 #### Pan Search Algorithm: ####
 
-    Most of our opponents used the basic pan searching strategy, basically like how a fan rotates. From centre to left, then centre to right. This is a very inefficient way of searching as the robot will always search the same area twice. We designed an algorithm that does a 360 degree search and then continue with forward search. 
+- Most of our opponents used a non optimised pan searching strategy, basically like how a fan rotates. From centre to left, then centre to right. To us, this is an inefficient way of searching as the robot will always search the same area twice. We designed an algorithm that does a 360 degree search and then continue with forward search. This allows our robot to scan for larger area only once. Think of it like how YOLO architecture works. 
 
-    If your robot is unable to locate the ball in the first scan, it is unlikely it is able to locate the ball in the second scan.
+- If your robot is unable to locate the ball in the first scan, it is unlikely it is able to locate the ball in the second scan. 
 
 #### QA Testing: ####
 
-    There are many edge cases in this competition. You need to test and debug your failure cases a lot. Don't simply test for the cases that work. Test for stuff such as when your robot gets cornered, etc...
+- There are many edge cases in this competition. You need to test and debug your failure cases a lot. Don't simply test for the cases that work. Test for scenarios such as when your robot gets cornered, etc...
 
 
 ## Acknowledgements ##
 
-- We would like to credit MiroMyro repository for giving us the inspiration to write our program in a state machine manner. It is a very efficient way to write code and debug. Our file names may look similar but they have been heavily modified to suit our robot design and algorithms.
+<h3>To Our Professor and Lab Technicians</h3>
+
+- We would like to express our profound gratitude to our professor <a href="https://dr.ntu.edu.sg/cris/rp/rp01120">Dr Heng Kok Hui, John Gerard</a> and the lab technicians for their unwavering support and guidance throughout the course. Their dedication and commitment have been instrumental in our success.
+
+<h3>To Our Seniors</h3>
+
+- We would also like to credit <a href="https://github.com/SKEW002/MiroMyro">MiroMyro</a> repository for giving us the inspiration to write our program in a state machine manner. It is a very efficient way to write code and debug. Our file names may look similar but they have been heavily modified to suit our robot design and algorithms.
+
+- We would also like to give a shoutout to <a href="https://github.com/Pokealimit/MA4012-Competition">Pioneer Roller Team</a> repository for giving us the inspiration to use the rubber band roller design and the panaromic scan strategy. 
