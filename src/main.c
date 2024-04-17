@@ -44,7 +44,6 @@ task main()
 
 
 	while(1) {
-		// writeDebugStreamLine("ORIENTATION: %d\n", CURR_ORIENTATION);
 		if (SensorValue[mainLimit] == 0){
 			stopAllTasks();
 			stop_all_motors();
@@ -52,21 +51,3 @@ task main()
 		}
 	}
 }
-
-// /* TEST CODE */
-//   task main()
-//   {
-//  	while(SensorValue[mainLimit]){
-//  		;
-//   	}
-//  	delay(500);
-//  	motorTestRun('r');
-//   	while(1) {
-//   		if (SensorValue[mainLimit] == 0){
-//  			stop_all_motors();
-//  			break;
-//  		}
-//   		continue;
-//   	}
-//   	break;
-//   }
