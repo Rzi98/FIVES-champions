@@ -1,5 +1,3 @@
-# Content for the markdown file including the Legends table
-markdown_content = """
 # Role Allocation Table
 
 | Name      | Primary Role | Secondary Role |
