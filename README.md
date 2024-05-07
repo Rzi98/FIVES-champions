@@ -42,7 +42,7 @@
 
 <h3> 4. <u>Task Priority</u> </h3>
 
-- It is important to have a good task priority system to ensure that the robot is always doing the most important task at that moment. For example, if the robot is collecting a ball and the line sensor gets triggered, the robot should immediately stop collecting the ball and perform an avoid boundary action. This is crucial to ensure our robot will never go out of bounds or get stuck at the edges. (Refer toTask Priority below)
+- It is important to have a good task priority system to ensure that the robot is always doing the most important task at that moment. For example, if the robot is collecting a ball and the line sensor gets triggered, the robot should immediately stop collecting the ball and perform an avoid boundary action. This is crucial to ensure our robot will never go out of bounds or get stuck at the edges. (Refer to Task Priority below)
 
 - Priority as follows:
     1. Boundary Avoidance
@@ -62,7 +62,7 @@
 | `detection.h`         | Ball detection sensor conditions and actions                 | 3             |
 | `compass.h`           | Get compass orientation value                                | -             |
 | `motorControls.h`     | Low-level motor-related code                                 | -             |
-| `sharpLimitSensor.c`  | Check limit switch code and sharp sensor boolean             | -             |
+| `sharpLimitSensor.h`  | Check limit switch code and sharp sensor boolean             | -             |
 
 
 ## Logic Flowchart ##
