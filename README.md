@@ -92,7 +92,7 @@ Download our match replays here: **[Replays](./markdown/compvid.md)**
 
 #### Pan Search Algorithm: ####
 
-- Most of our opponents used a non optimised pan searching strategy, basically like how a fan rotates. From centre to left, then centre to right. To us, this is an inefficient way of searching as the robot will always search the same area twice. We designed an algorithm that does a 360 degree search and then continue with forward search. This allows our robot to scan for larger area only once. Think of it like how YOLO architecture works. 
+- Some of our opponents used a non-optimised pan searching strategy, basically like how a fan rotates. From centre to left, then left to right (notice it covers centre to left area twice). To us, this is an inefficient way of searching as the robot will always search the same area twice. We designed an algorithm that does a 360 degree search and then continue with forward search. This allows our robot to scan for larger area only once and proceed to search other area. Think of it like how YOLO architecture works. 
 
 - If your robot is unable to locate the ball in the first scan, it is unlikely it is able to locate the ball in the second scan. 
 
