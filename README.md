@@ -102,7 +102,7 @@ Download our match replays here: **[Replays](./markdown/compvid.md)**
 
 #### Have Fun: ####
 
-- Most importantly, you need to enjoy the 14 weeks of the development process. What really helps for our team is really the synchronisation we had and the vibes we resonated during team meetings. Winning first place isn't everything, after all it is only 10%. 
+- Most importantly, you need to enjoy the 14 weeks of the development process. What really helped for our team was the synchronisation we had and the vibes we resonated during team meetings. Winning first place isn't everything, after all it is only 10%. 
 
 ## Contributors ##
 <h3><u>Hardware</u></h3>
