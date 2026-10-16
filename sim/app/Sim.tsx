@@ -124,7 +124,7 @@ export default function Sim({ files }: { files: Files }) {
   }, [files]);
   const canvas = useRef<HTMLCanvasElement>(null);
   const world = useRef<World | null>(null);
-  const [speed, setSpeed] = useState(1);
+  const [speed, setSpeed] = useState(2);
   const [paused, setPaused] = useState(false);
   const [rays, setRays] = useState(true);
   const [opponent, setOpponent] = useState(true);
