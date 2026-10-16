@@ -169,7 +169,7 @@ export default function Sim({ files }: { files: Files }) {
       <div>
         <div style={{ display: "flex", gap: 8, alignItems: "center", marginBottom: 8 }}>
           <button onClick={() => setPaused(!paused)}>{paused ? "▶ Play" : "⏸ Pause"}</button>
-          <button onClick={() => world.current?.reset()}>↺ New round</button>
+          <button onClick={() => world.current?.newMatch()}>↺ Restart match</button>
           <select value={speed} onChange={(e) => setSpeed(+e.target.value)}>
             {[0.25, 0.5, 1, 2, 5, 10, 20].map((s) => (
               <option key={s} value={s}>{s}×</option>
@@ -181,11 +181,11 @@ export default function Sim({ files }: { files: Files }) {
         <canvas ref={canvas} width={CAL.fieldL * S + 2 * M} height={CAL.fieldW * S + 2 * M} style={{ borderRadius: 6 }} />
         {w && (
           <div style={{ marginTop: 8, fontSize: 15 }}>
-            Match {w.match} · round {w.round}/3 · {Math.floor(left / 60)}:{String(Math.floor(left % 60)).padStart(2, "0")} left ·{" "}
+            Best of 3 · round {w.round}/3 · {Math.floor(left / 60)}:{String(Math.floor(left % 60)).padStart(2, "0")} left ·{" "}
             {w.balls.filter((b) => b.state === "scored").length}/{CAL.balls} balls home
             <br />
-            Rounds this match: blue {w.roundWins[0]} – red {w.roundWins[1]} · matches won: blue {w.matchWins[0]} – red {w.matchWins[1]}
-            {w.matchWins[2] ? ` (${w.matchWins[2]} drawn)` : ""}
+            Rounds won: blue {w.roundWins[0]} – red {w.roundWins[1]}
+            {w.matchOver ? " · match over, replaying…" : ""}
             {w.result && <div style={{ color: "#facc15", fontWeight: "bold" }}>{w.result}</div>}
           </div>
         )}

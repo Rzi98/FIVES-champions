@@ -86,11 +86,10 @@ export class World {
   t = 0;
   balls: Ball[] = [];
   robots: Robot[] = [];
-  // best of 3: a match ends when someone takes 2 rounds, or after 3 rounds (more round wins takes it)
-  match = 1;
-  round = 0; // round within the current match
+  // one best-of-3 match on loop: ends when someone takes 2 rounds or after round 3, then replays from 0-0
+  round = 0;
   roundWins = [0, 0];
-  matchWins = [0, 0, 0]; // blue, red, drawn
+  matchOver = false;
   result = ""; // banner for the round that just ended
   ended = 0; // sim time the round ended, 0 while running
   private startPressedUntil = 150;
@@ -130,23 +129,24 @@ export class World {
     if (this.withOpponent) this.robots.push(spawn("Opponent (red, same code)", "#ef4444", 1));
   }
 
+  newMatch() {
+    this.round = 0;
+    this.roundWins = [0, 0];
+    this.matchOver = false;
+    this.reset();
+  }
+
   setOpponent(on: boolean) {
     this.withOpponent = on;
-    this.reset();
+    this.newMatch();
   }
 
   // Advance 1 ms.
   tick() {
     if (this.ended) {
-      if (this.t - this.ended > 2500) {
-        const [b, r] = this.roundWins;
-        if (b >= 2 || r >= 2 || this.round >= 3) {
-          this.matchWins[b > r ? 0 : r > b ? 1 : 2]++;
-          this.match++;
-          this.round = 0;
-          this.roundWins = [0, 0];
-        }
-        this.reset();
+      if (this.t - this.ended > (this.matchOver ? 5000 : 2500)) {
+        if (this.matchOver) this.newMatch();
+        else this.reset();
       }
       else this.t++;
       return;
@@ -170,15 +170,11 @@ export class World {
     if (!playable || this.t >= CAL.matchMs || live.every((r) => r.prog.error)) {
       this.ended = this.t;
       const [a, b] = this.robots.map((r) => r.score);
-      if (b === undefined) this.result = `Round over: ${a} scored`;
-      else if (a === b) this.result = `Round ${this.round} drawn ${a}-${b}`;
-      else {
-        const w = a > b ? 0 : 1;
-        this.roundWins[w]++;
-        const decided = this.roundWins[w] >= 2 || (this.round >= 3 && this.roundWins[w] > this.roundWins[1 - w]);
-        this.result = `${w ? "Red" : "Blue"} wins round ${this.round} (${a}-${b})${decided ? ` and match ${this.match}` : ""}`;
-      }
-      if (b !== undefined && this.round >= 3 && this.roundWins[0] === this.roundWins[1]) this.result += ", match drawn";
+      if (b !== undefined && a !== b) this.roundWins[a > b ? 0 : 1]++;
+      this.result = b === undefined ? `Round ${this.round}: ${a} scored` : a === b ? `Round ${this.round} drawn ${a}-${b}` : `${a > b ? "Blue" : "Red"} wins round ${this.round} (${a}-${b})`;
+      const [bw, rw] = this.roundWins;
+      this.matchOver = this.round >= 3 || Math.max(bw, rw) >= 2;
+      if (this.matchOver && b !== undefined) this.result += bw === rw ? ". Match drawn" : `. ${bw > rw ? "Blue" : "Red"} wins the match ${bw}-${rw}!`;
     }
   }
 
