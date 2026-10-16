@@ -171,7 +171,7 @@ export default function Sim({ files }: { files: Files }) {
           <button onClick={() => setPaused(!paused)}>{paused ? "▶ Play" : "⏸ Pause"}</button>
           <button onClick={() => world.current?.newMatch()}>↺ Restart match</button>
           <select value={speed} onChange={(e) => setSpeed(+e.target.value)}>
-            {[0.25, 0.5, 1, 2, 5, 10, 20].map((s) => (
+            {[1, 2, 5].map((s) => (
               <option key={s} value={s}>{s}×</option>
             ))}
           </select>
