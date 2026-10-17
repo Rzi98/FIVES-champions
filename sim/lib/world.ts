@@ -27,6 +27,8 @@ export const CAL = {
   sliceLoops: 20, // loop iterations each RobotC task gets per 1 ms timeslice
   compassOffset: 0, // deg, mounting error
   matchMs: 90_000,
+  // No ball picked up, dropped or scored for this long = the robots are stuck; replay the round.
+  stuckMs: 20_000,
   balls: 3,
 };
 
@@ -92,6 +94,9 @@ export class World {
   matchOver = false;
   result = ""; // banner for the round that just ended
   ended = 0; // sim time the round ended, 0 while running
+  private replay = false; // the round ended because the robots got stuck; play it again
+  private lastProgress = 0;
+  private ballStates = "";
   private startPressedUntil = 150;
   private factory: Factory;
   private withOpponent: boolean;
@@ -106,7 +111,10 @@ export class World {
     this.t = 0;
     this.ended = 0;
     this.result = "";
-    this.round++;
+    if (!this.replay) this.round++;
+    this.replay = false;
+    this.lastProgress = 0;
+    this.ballStates = "";
     const { fieldW: W, fieldL: L, robotL } = CAL;
     this.balls = [];
     while (this.balls.length < CAL.balls) {
@@ -167,7 +175,17 @@ export class World {
     const live = this.live();
     // a ball held by a robot that's out is gone for the round
     const playable = this.balls.some((b) => b.state === "free" || live.some((r) => r.held === b));
-    if (!playable || this.t >= CAL.matchMs || live.every((r) => r.prog.error)) {
+    const states = this.balls.map((b) => b.state).join();
+    if (states !== this.ballStates) [this.ballStates, this.lastProgress] = [states, this.t];
+    const stuck = this.t - this.lastProgress >= CAL.stuckMs;
+    if (stuck && this.robots.every((r) => r.score === 0)) {
+      this.ended = this.t;
+      this.replay = true;
+      this.result = `Robots stuck, replaying round ${this.round}`;
+      return;
+    }
+    // stuck after someone scored: end the round there and count it
+    if (stuck || !playable || this.t >= CAL.matchMs || live.every((r) => r.prog.error)) {
       this.ended = this.t;
       const [a, b] = this.robots.map((r) => r.score);
       if (b !== undefined && a !== b) this.roundWins[a > b ? 0 : 1]++;
